@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1678241319057562}
+  m_IsPrefabAsset: 1
+--- !u!1 &1678241319057562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4750115243930250}
+  - component: {fileID: 114102537943751814}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4750115243930250
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678241319057562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114102537943751814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678241319057562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59233e3de009f624cb634d8f903a24e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipePrefab: {fileID: 1171787435197354, guid: 5307205fdbc518f43ab13247f347132c, type: 2}
+  pipeHeadPrefab: {fileID: 1232408844833190, guid: 7ce331a1dbddc42458521946a9d89cbb,
+    type: 2}
+  pipeBodyPrefab: {fileID: 1639531824373556, guid: 867c752efdaad754a866ba91258b2f80,
+    type: 2}
+  scoreGainAreaPrefab: {fileID: 114902443006619894, guid: 9ac83a129804af74e87043de236bf3f6,
+    type: 2}
+  pairOfPipesPrefab: {fileID: 114515776823185016, guid: efdcd4b2fd99b894b9b1bfe69f92fdc2,
+    type: 2}
+  distanceBetweenPipe: 6
+  firstSpawPositionX: 0
+  gapHeightMin: 3
+  gapHeightMax: 6
+  canvasesManager: {fileID: 0}
