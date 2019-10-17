@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\FlappyBird\PipeCleaner.cs" />
     <Compile Include="Assets\Scripts\FlappyBird\ScoreGainArea.cs" />
     <Compile Include="Assets\Scripts\FlappyBird\ScreenBoundary.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuHandler.cs" />
     <Compile Include="Assets\Scripts\T-RexRunner\BackgroundMovement.cs" />
     <Compile Include="Assets\Scripts\T-RexRunner\BackgroundTrigger.cs" />
     <Compile Include="Assets\Scripts\T-RexRunner\ButtonHandler.cs" />

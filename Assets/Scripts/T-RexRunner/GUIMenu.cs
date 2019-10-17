@@ -14,9 +14,13 @@ public class GUIMenu : MonoBehaviour
     [SerializeField] Text firstRankedName;
     [SerializeField] Text secondRankedName;
     [SerializeField] Text thirdRankedName;
-
+    
     [SerializeField] GameObject errorPanel;
     [SerializeField] Text errorText;
+
+    [SerializeField] GameObject showSubmitButton;
+    [SerializeField] InputField playerNameInput;
+    [SerializeField] Text playerNameErrorText;
 
     Text highscoreText;
     Text highscoreNumber;
@@ -254,5 +258,29 @@ public class GUIMenu : MonoBehaviour
         firstRankedName.text = first.ToString();
         secondRankedName.text = second.ToString();
         thirdRankedName.text = third.ToString();
+    }
+    //OK
+    public void ShowSubmitWindow()
+    {
+        playerNameErrorText.gameObject.SetActive(false);
+        CanvasGUIHelpers.SwitchVisibleCanvasGroup(SubmitScorePanelCanvasGroup, SubmitScorePanelImage, true, "SubmitScore");
+        CanvasGUIHelpers.SwitchVisibleCanvasGroup(LeaderboardPanelCanvasGroup, LeaderboardPanelImage, false, "Leaderboard");
+    }
+    //OK
+    public void ShowNameInputFieldError(string error)
+    {
+        playerNameErrorText.text = error;
+        playerNameErrorText.gameObject.SetActive(true);
+    }
+    //OK
+    public void HandleSubmitScore(bool isError, string errorMessage, ScoreList scoreList)
+    {
+        if (!isError)
+        {
+            CanvasGUIHelpers.SwitchVisibleCanvasGroup(SubmitScorePanelCanvasGroup, SubmitScorePanelImage, false, "SubmitScore");
+            CanvasGUIHelpers.SwitchVisibleCanvasGroup(LeaderboardPanelCanvasGroup, LeaderboardPanelImage, true, "Leaderboard");
+            showSubmitButton.SetActive(false);
+        }
+        SetUpLeaderboard(isError, errorMessage, scoreList);
     }
 }

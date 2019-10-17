@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Helpers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,10 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour {
     [SerializeField] GUIMenu guiMenu;
+    [SerializeField] Text nameInputField;
     public void RestartScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("TRexRunner");
     }
     public void CancelSubmit()
     {
@@ -23,8 +25,18 @@ public class ButtonHandler : MonoBehaviour {
     {
 
     }
-    public void SubmtScore()
+    public void SubmitScore()
     {
-
+        if (string.IsNullOrEmpty(nameInputField.text.Trim()))
+        {
+            guiMenu.ShowNameInputFieldError("Name can't be null");
+            return;
+        }
+        Score newScore = new Score { PlayerName = nameInputField.text.Trim(), Value = (int) Math.Floor(GUIMenu.PersonalScore), GameID = ClientAPIs.Instance.gameID };
+        StartCoroutine(RestClient.Instance.Post(ClientAPIs.Instance.Uri, newScore, guiMenu.HandleSubmitScore));
+    }
+    public void ShowSubmitScore()
+    {
+        guiMenu.ShowSubmitWindow();
     }
 }
